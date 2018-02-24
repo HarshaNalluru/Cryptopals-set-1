@@ -45,8 +45,10 @@ def which_string(file):
   for line in open(file):
     s, score = Decode(line)
     if score > max_score:
+      max_line = line
       max_score = score
       max_score_str = s
+  print 'line :',line
   return max_score_str
-
+  
 print which_string("4.txt")
