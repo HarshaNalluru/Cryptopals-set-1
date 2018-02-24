@@ -96,10 +96,11 @@ for KEYSIZE in range(2,40):
 
 KEYSIZE = min_keysize
 
-print "KEYSIZE = " + str(KEYSIZE)
+print "KEYSIZE =",KEYSIZE
 
-
-split_data = [data[i::KEYSIZE] for i in range(KEYSIZE)]
+split_data = []
+for i in range(KEYSIZE):
+  split_data.append(data[i::KEYSIZE])
 
 key = ''
 for i in range(len(split_data)):
